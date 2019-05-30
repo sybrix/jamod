@@ -166,7 +166,8 @@ public class ModbusTCPListener implements Runnable {
              * should be allright, denial of service attacks via massive parallel
              * program logins can probably be prevented.
              */
-            m_ServerSocket = new ServerSocket(m_Port, m_FloodProtection, m_Address);
+          //  m_ServerSocket = new ServerSocket(m_Port, m_FloodProtection, m_Address);
+            m_ServerSocket = new ServerSocket(m_Port,m_FloodProtection);
             logger.debug("Listenening to {} (Port {})", m_ServerSocket.toString(), m_Port);
 
             // Infinite loop, taking care of resources in case of a lot of parallel logins
